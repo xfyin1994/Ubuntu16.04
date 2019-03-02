@@ -43,3 +43,28 @@ sudo make
 sudo ./deviceQuery
 
 ```
+# 安装cudnn
+https://developer.nvidia.com/rdp/cudnn-archive 下载cudnn(需要注册账号登录)：
+ 
+ ××cuDNN v7.0.5 Library for Linux××
+```
+下载好cudnn-9.0-linux-x64-v7.tgz之后：
+
+cd ~/下载
+tar zxvf cudnn-9.0-linux-x64-v7.tgz
+cd cuda/include/
+sudo cp cudnn.h /usr/local/cuda/include/    #复制头文件
+
+再将cd进入lib64目录下的动态文件进行复制和链接：
+cd cuda/lib64/
+
+sudo cp lib* /usr/local/cuda/lib64/    #复制动态链接库
+cd /usr/local/cuda/lib64/
+sudo rm -rf libcudnn.so libcudnn.so.7    #删除原有动态文件
+sudo ln -s libcudnn.so.7.0.5 libcudnn.so.7  #生成软衔接（注意这里要和自己下载的cudnn版本对应，可以在/usr/local/cuda/lib64下查看自己libcudnn的版本）
+sudo ln -s libcudnn.so.7 libcudnn.so      #生成软链接
+
+安装完成。
+
+```
+
