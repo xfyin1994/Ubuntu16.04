@@ -74,3 +74,9 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple/ --upgrade tensorflow
 复制安装完美解决，前提是python是64位
 ```
 
+### tensorflow清华源下载安装
+pip，pip3注意对应不同的python版本
+```
+sudo pip3 install tensorflow-gpu==1.8 -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
