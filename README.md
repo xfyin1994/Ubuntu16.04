@@ -67,4 +67,10 @@ sudo ln -s libcudnn.so.7 libcudnn.so      #生成软链接
 安装完成。
 
 ```
+# Tensorflow配置环境报错
+## 关于python安装tensorflow出现No matching distribution found for tensorflow的一种解决
+```
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple/ --upgrade tensorflow
+复制安装完美解决，前提是python是64位
+```
 
