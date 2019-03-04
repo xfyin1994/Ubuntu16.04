@@ -2,7 +2,7 @@
 Ubuntu下环境的配置，tensorflow，docker等
 
 # Ubuntu安装anaconda之后打开终端出现（base）
-[(base) yin@yin-System-Product-Name](https://github.com/xfyin1994/Ubuntu16.04/blob/master/wdP8C.png)
+![(base) yin@yin-System-Product-Name](https://github.com/xfyin1994/Ubuntu16.04/blob/master/wdP8C.png)
 这也可以因为auto_activate_base设置为True。您可以使用以下命令进行检查
 ```
 conda config --show | grep auto_activate_base
