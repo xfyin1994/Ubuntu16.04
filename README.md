@@ -1,6 +1,16 @@
 # Ubuntu16.04
 Ubuntu下环境的配置，tensorflow，docker等
 
+# Ubuntu安装anaconda之后打开终端出现（base）
+这也可以因为auto_activate_base设置为True。您可以使用以下命令进行检查
+
+```
+conda config --show | grep auto_activate_base
+```
+将其设置为false
+```
+conda config --set auto_activate_base False
+```
 
 # 卸载CUDA
 注意以下的命令都是在root用户下操作的。
