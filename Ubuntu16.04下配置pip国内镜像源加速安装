@@ -1,0 +1,65 @@
+# 永久置换pip镜像源
+1. 创建pip.conf文件
+运行以下命令:
+```
+cd ~/.pip
+```
+1
+如果提示目录不存在的话,我们要自行创建一个,再进入目录
+
+mkdir ~/.pip
+cd ~/.pip
+1
+2
+在.pip目录下创建一个pip.conf文件
+
+touch pip.conf
+1
+文件就创建好了(当然如果你已经有这个文件了这步可以跳过).
+
+2. 编辑pip.conf文件
+sudo gedit ~/.pip/pip.conf
+1
+打开pip.conf文件窗口,将以下内容复制到文件中:
+
+[global] 
+index-url = http://pypi.douban.com/simple 
+[install] 
+trusted-host=pypi.douban.com
+
+这样就替换成功了,当然你也可以选择其他镜像源.
+
+3. 测试速度
+尝试安装django库,运行
+
+pip install django
+1
+终端反馈内容为
+
+Collecting django 
+Downloading http://pypi.doubanio.com/packages/87/9f/4ec8b197d83666fddd2398842024c5341ee7d40bbec6aee9705d1ad22f13/Django-2.0.tar.gz (8.0MB) 
+100% |████████████████████████████████| 8.0MB 4.3MB/s
+
+可以看到下载速度是非常快的,这就是镜像的力量.
+
+暂时置换镜像源
+同样以豆瓣镜像源为例,接下来我们安装pygame包,你可以替换成你想安装的其他包的名字.
+
+pip install pygame -i http://pypi.douban.com/simple
+1
+这步如果出错,请将命令变换为
+
+pip install pygame -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+1
+同样可以超迅速成功安装:
+
+Collecting pygame 
+Downloading http://pypi.doubanio.com/packages/dc/76/fdfb5cee3432192a89df6aad8a33eed96ba6a3a16e0dca951db9fef03688/pygame-1.9.3-cp27-cp27mu-manylinux1_x86_64.whl (9.4MB) 
+100% |████████████████████████████████| 9.4MB 3.8MB/s 
+Installing collected packages: pygame 
+Successfully installed pygame-1.9.3
+--------------------- 
+作者：yucicheung 
+来源：CSDN 
+原文：https://blog.csdn.net/yucicheung/article/details/79095742 
+版权声明：本文为博主原创文章，转载请附上博文链接！
