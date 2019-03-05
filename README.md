@@ -1,5 +1,6 @@
 # Ubuntu16.04
 Ubuntu下环境的配置，tensorflow，docker等
+
 # anaconda
 
 ## Ubuntu安装anaconda之后打开终端出现（base）
