@@ -1,6 +1,36 @@
 # Ubuntu16.04
 Ubuntu下环境的配置，tensorflow，docker等
 
+
+# 修改conda镜像源
+在终端中运行以下命令修改镜像源,可以明显加速安装.
+```
+# 优先使用清华conda镜像
+conda config --prepend channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+
+# 也可选用科大conda镜像
+conda config --prepend channels http://mirrors.ustc.edu.cn/anaconda/pkgs/free/
+```
+要查看镜像源是否安装成功的话,建议终端中运行以下命令:
+```
+conda config --set show_channel_urls yes
+```
+会生成一个~/.condarc文件,运行cat命令查看文件内容
+```
+cat ~/.condarc
+```
+显示内容为
+```
+channels:
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+  - http://mirrors.ustc.edu.cn/anaconda/pkgs/free/
+  - defaults
+show_channel_urls: true
+```
+这样每次用conda安装时,在package右边都会显示安装源的地址,那么我们对于安装的时间能有一个大致的估计. 
+修改后,用conda安装镜像源中任何库都能明显加速,在我的电脑上安装速度级可以达到MB/s 
+原文：https://blog.csdn.net/yucicheung/article/details/79094657 
+
 # anaconda
 
 ## Ubuntu安装anaconda之后打开终端出现（base）
