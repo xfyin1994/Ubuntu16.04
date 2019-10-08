@@ -133,3 +133,11 @@ pip，pip3注意对应不同的python版本
 sudo pip3 install tensorflow-gpu==1.8 -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
+# ubuntu16.04同时使用 pyhton2.7和3.5，并随意切换
+```
+cd /usr/bin
+sudo mv python python.bak
+sudo ln -s python2.7 python
+sudo ln -s python3.5 python3
+```
+
