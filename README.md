@@ -140,4 +140,30 @@ sudo mv python python.bak
 sudo ln -s python2.7 python
 sudo ln -s python3.5 python3
 ```
+# 关于解决Ubuntu16.04中pip和pip3同时指向Python3.5的问题
+##分别用以下命令安装pip、pip3
+```
+sudo apt install python-pip
 
+sudo apt install python3-pip
+```
+```
+which pip 
+#我的显示如下：
+#/usr/local/bin/pip
+vim /usr/local/bin/pip
+```
+
+可能遇到的问题：
+我无法编辑里面的内容，需要先更改文件的权限，方法如下：
+进入到/usr/local/bin 路径下，输入：
+```
+sudo chmod 777 xxx #(xxx是指文件名，777是指将所有对此文件的操作权限赋予用户)
+```
+然后接着上一步：
+编辑 pip文件：
+将第一行 #!/usr/bin/python3 修改为
+```
+#!/usr/bin/python2
+```
+保存之后，在查看一下pip的指向，就发现已经指向了Python2.7，大功告成
