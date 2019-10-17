@@ -171,3 +171,15 @@ sudo chmod 777 xxx #(xxx是指文件名，777是指将所有对此文件的操�
 #!/usr/bin/python2
 ```
 保存之后，在查看一下pip的指向，就发现已经指向了Python2.7，大功告成
+
+## 如果报如下错误的话
+```
+Traceback (most recent call last):
+  File "/usr/local/bin/pip", line 7, in <module>
+    from pip._internal import main
+ImportError: No module named _internal
+```
+执行如下代码
+```
+python -m pip install --upgrade pip
+```
