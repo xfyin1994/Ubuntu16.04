@@ -77,3 +77,7 @@ screen [ -options ] [ cmd [ args ] ]
 screen -r [[pid.]tty[.host]]
 screen -r sessionowner/[[pid.]tty[.host]]
 ```
+# 如果想杀死一个已经detached的screen会话，可以使用以下命令：
+```
+screen -X -S [session # you want to kill] quit
+```
