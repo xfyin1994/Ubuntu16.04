@@ -1,6 +1,21 @@
 # Ubuntu16.04
 Ubuntu下环境的配置，tensorflow，docker等
 
+# apt-get update 报错
+出现类似如下提示
+```
+E: Could not get lock /var/lib/dpkg/lock – open (11: Resource temporarily unavailable)
+E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?
+```
+查看进程
+```
+ps aux | grep -i apt
+```
+kill进程
+```
+sudo kill -9 <process id>
+```
+
 
 # 修改conda镜像源
 在终端中运行以下命令修改镜像源,可以明显加速安装.
